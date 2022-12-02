@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import SymptomsList from '../symptomList/SymptomsList';
 
 const SelectSymptomBox = () => {
-  const [checkedItems, setCheckedItems] = useState(new Map(
-    SymptomsList.map((symptom)=> [symptom, 0]) 
-  ));
+  const [checkedItems, setCheckedItems] = useState(
+    new Map(SymptomsList.map((symptom) => [symptom, 0])),
+  );
 
   const checkedItemHandler = (id, isChecked) => {
-      checkedItems.set(id,isChecked);
-      setCheckedItems(checkedItems);
+    checkedItems.set(id, isChecked);
+    setCheckedItems(checkedItems);
   };
 
   const save = () => {
@@ -19,7 +19,7 @@ const SelectSymptomBox = () => {
       outputObject[key] = value;
     });
     console.log(outputObject);
-  }
+  };
 
   return (
     <Container>
@@ -27,12 +27,21 @@ const SelectSymptomBox = () => {
         {SymptomsList.map((symptom, index) => {
           return (
             <CheckBox key={index}>
-              <CheckBoxSymptom symptom={symptom} checkedItemHandler={checkedItemHandler}/>
+              <CheckBoxSymptom
+                symptom={symptom}
+                checkedItemHandler={checkedItemHandler}
+              />
             </CheckBox>
           );
         })}
       </SelectBoxWrap>
-      <CheckResult onClick={()=>{save();}}>Next &gt;</CheckResult>;
+      <CheckResult
+        onClick={() => {
+          save();
+        }}
+      >
+        Next &gt;
+      </CheckResult>
     </Container>
   );
 };
