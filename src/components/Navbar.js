@@ -7,11 +7,12 @@ const Navbar = () => {
 
 const Header = styled.div`
   width: 100%;
-  height: 30px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 700;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aliceblue;
   box-sizing: border-box;
 `;
 

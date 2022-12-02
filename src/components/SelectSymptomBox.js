@@ -1,20 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import SymptomsList from '../symptomList/SymptomsList';
 
 const SelectSymptomBox = () => {
-
-
-
   return (
   <SelectBoxContainer>
         { SymptomsList.map((symptom, index)=> {
+          let printSymptom = symptom.replaceAll('_',' ');
           return (
             <CheckBox
-                key={index}>
-            <SelectDisease>
-                <input type="checkbox"/>{symptom}
-            </SelectDisease>
+              key={index}>
+              <SelectDisease>
+                  <input id={symptom} type="checkbox"/>{printSymptom}
+              </SelectDisease>
           </CheckBox>
           );
         })
@@ -24,23 +22,22 @@ const SelectSymptomBox = () => {
 };
 
 const SelectBoxContainer =styled.div`
-  width: 70%;
+  width: 100%;
   height: 100%;
-  background-color: aliceblue;
-  margin: 30px auto auto;
+  margin-top: 30px;
+  padding-left: 20px;
   display: flex;
   flex-wrap: wrap;
 `;
 
-const CheckBox =styled.div``;
+const CheckBox =styled.div`
+  display: flex;
+  max-width: calc(100% /4);
+  width: 100%;
+`;
 
 const SelectDisease =styled.span`
-  max-width: calc(100% /3);
-  width: 100%;
-  height: 20px;
-  background-color: beige;
-  font-size: 12px;
-  display: flex;
+  font-size: 19px;
 `;
 
 export default SelectSymptomBox;
