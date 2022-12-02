@@ -6,8 +6,7 @@ import SelectSymptomBox from "./components/SelectSymptomBox";
 const Main = () => {
   return (
     <>
-    <SelectSymptomBox/>
-    <ResultButton/>
+      <SelectSymptomBox/>
     </>
   )
 }

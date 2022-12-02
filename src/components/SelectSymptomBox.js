@@ -1,27 +1,49 @@
-import React from 'react';
+import { useState } from 'react';
+import CheckBoxSymptom from './CheckBoxSymptom';
 import styled from 'styled-components';
 import SymptomsList from '../symptomList/SymptomsList';
 
 const SelectSymptomBox = () => {
+  const [checkedItems, setCheckedItems] = useState(new Map(
+    SymptomsList.map((symptom)=> [symptom, 0]) 
+  ));
+
+  const checkedItemHandler = (id, isChecked) => {
+      checkedItems.set(id,isChecked);
+      setCheckedItems(checkedItems);
+  };
+
+  const save = () => {
+    let outputObject = {};
+    checkedItems.forEach((value, key) => {
+      outputObject[key] = value;
+    });
+    console.log(outputObject);
+  }
+
   return (
-  <SelectBoxContainer>
-        { SymptomsList.map((symptom, index)=> {
-          let printSymptom = symptom.replaceAll('_',' ');
+    <Container>
+      <SelectBoxWrap>
+        {SymptomsList.map((symptom, index) => {
           return (
-            <CheckBox
-              key={index}>
-              <SelectDisease>
-                  <input id={symptom} type="checkbox"/>{printSymptom}
-              </SelectDisease>
-          </CheckBox>
+            <CheckBox key={index}>
+              <CheckBoxSymptom symptom={symptom} checkedItemHandler={checkedItemHandler}/>
+            </CheckBox>
           );
-        })
-      }
-    </SelectBoxContainer>
-  )
+        })}
+      </SelectBoxWrap>
+      <CheckResult onClick={()=>{save();}}>Next &gt;</CheckResult>;
+    </Container>
+  );
 };
 
-const SelectBoxContainer =styled.div`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const SelectBoxWrap = styled.div`
   width: 100%;
   height: 100%;
   margin-top: 30px;
@@ -30,14 +52,28 @@ const SelectBoxContainer =styled.div`
   flex-wrap: wrap;
 `;
 
-const CheckBox =styled.div`
+const CheckBox = styled.div`
   display: flex;
-  max-width: calc(100% /4);
+  max-width: calc(100% / 4);
   width: 100%;
 `;
 
-const SelectDisease =styled.span`
-  font-size: 19px;
+const CheckResult = styled.button`
+  width: 30%;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 30px;
+  border-radius: 10px;
+  background-color: mediumseagreen;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #dcf6fc;
+  }
 `;
 
 export default SelectSymptomBox;
