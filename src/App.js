@@ -1,21 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import { Route, Routes } from "react-router-dom";
+
+import Main from "./Main";
+import Login from "./Login";
+import Signup from "./Signup";
 import Navbar from "./components/Navbar";
-import ResultButton from "./components/ResultButton";
-import SelectSymptomBox from "./components/SelectSymptomBox";
 
 function App() {
 
   
   return (
-
-  <Container>
+    <Container>
+      <Navbar/>
+    <Routes>
+    <Route path="/" element={<Main />} />
+    <Route path="/signup" element={<Signup/>} />
+    <Route path="/login" element={<Login/>} />
+    </Routes>
     
-    <Navbar/>
-    <SelectSymptomBox/>
-    <ResultButton/>
     </Container>
-  );
+  )
 }
 
 const Container = styled.div`
