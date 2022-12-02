@@ -1,10 +1,14 @@
 import React from 'react';
-import SelectSymptomBox from "./components/SelectSymptomBox";
+import Navbar from './components/Navbar';
+import SelectSymptomBox from './components/SelectSymptomBox';
 
 const SelectPage = () => {
   return (
-      <SelectSymptomBox/>
-  )
-}
+    <>
+      <Navbar />
+      <SelectSymptomBox />
+    </>
+  );
+};
 
 export default SelectPage;

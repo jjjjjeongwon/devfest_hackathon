@@ -1,12 +1,10 @@
-import React from 'react'
-import {auth, db} from "./shared/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import {getDocs, where, query, collection} from "firebase/firestore";
-import styled from "styled-components";
-import {useNavigate} from "react-router-dom";
+import React from 'react';
+import { auth, db } from './shared/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { getDocs, where, query, collection } from 'firebase/firestore';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-
-
 
 const Login = () => {
     const id_ref =React.useRef(null);
@@ -65,10 +63,8 @@ const Login = () => {
               }} >아직 회원이 아니신가요?</SignupButton>
         </ButtonContainer>
     </Wrap>
-
-  )
-}
-
+  );
+};
 
 const Wrap = styled.div`
 
@@ -101,14 +97,15 @@ const Logo = styled.a`
   }
 `;
 
-const LoginText =styled.div`
-margin: 0px auto 20px;
-    font-size: 25px;
-    font-weight: bold;
+const LoginText = styled.div`
+  margin: 0px auto 20px;
+  font-size: 25px;
+  font-weight: bold;
 `;
-const InputBox =styled.div`
-     width : 60%;
+const InputBox = styled.div`
+  width: 60%;
 `;
+
 
 const Text =styled.div`
     font-size: 13px;
@@ -126,16 +123,17 @@ width: 97%;
     font-size: 12px;
     font-weight: 500;
     background-color: none;
-    
+   
 `;
 
-const ButtonContainer =styled.div`
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    width: 60%;
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
 `;
+
 
 const Button =styled.button`
     width: 100%;
@@ -154,6 +152,7 @@ const SignupButton =styled.div`
     font-size: 13px;
     cursor: pointer;
     &:hover {
+
     font-weight: bold;
   }
 `;
