@@ -3,13 +3,14 @@ import Navbar from "./components/Navbar";
 import ResultButton from "./components/ResultButton";
 import SelectSymptomBox from "./components/SelectSymptomBox";
 
-const Main = () => {
+const SelectPage = () => {
   return (
     <>
+          <Navbar/>
     <SelectSymptomBox/>
     <ResultButton/>
     </>
   )
 }
 
-export default Main
+export default SelectPage;
