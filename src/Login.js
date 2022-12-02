@@ -35,29 +35,12 @@ const Login = () => {
           
         };
 
-        
-            //  navigate("/");
-            //  alert("로그인 완료!");
-            // console.log(id_ref.current.value);
-            
-
-             
-               
     }
-
-    // const navigator =useNavigate();
-    // useEffect(()=> {
-    //   if(is_login){
-    //     navigator("/")
-    //   }
-    // })
-    
-
 
 
   return (
     <Wrap>
-        <Logo href="/">
+        <Logo>
           <img src="/images/KakaoTalk_Photo_2022-12-03-03-39-38.png" alt="" />
         </Logo>
         <LoginText>
@@ -93,7 +76,7 @@ const Wrap = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 600px;
     height : 100%;
     margin: 80px auto;
 
@@ -104,7 +87,6 @@ const Wrap = styled.div`
 `;
 
 const Logo = styled.a`
-  cursor: pointer;
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -129,7 +111,7 @@ const InputBox =styled.div`
 `;
 
 const Text =styled.div`
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
 `;
 
@@ -143,6 +125,7 @@ width: 97%;
     border : 1px solid lightslategray;
     font-size: 12px;
     font-weight: 500;
+    background-color: none;
     
 `;
 
@@ -156,7 +139,7 @@ const ButtonContainer =styled.div`
 
 const Button =styled.button`
     width: 100%;
-    height: 30px;
+    height: 35px;
     margin-bottom: 10px;
     font-size: 15px;
     border: none;
@@ -168,7 +151,7 @@ const Button =styled.button`
 `;
 
 const SignupButton =styled.div`
-    font-size: 10px;
+    font-size: 13px;
     cursor: pointer;
     &:hover {
     font-weight: bold;

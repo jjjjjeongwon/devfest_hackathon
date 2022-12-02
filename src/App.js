@@ -26,7 +26,7 @@ const Container = styled.div`
   align-items: center;
   margin-bottom: 50px;
   background-color:darkseagreen;
-  height: 100vh;
+  height: 100%;
 `;
 
 export default App;
