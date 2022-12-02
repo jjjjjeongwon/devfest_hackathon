@@ -23,8 +23,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 50px;
-  background-color: darkseagreen;
+  margin-bottom: 50px;
+  background-color:darkseagreen;
   height: 100%;
 `;
 
