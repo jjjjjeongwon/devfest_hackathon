@@ -3,7 +3,6 @@ import {getAuth} from "firebase/auth";
 import {getFirestore} from "firebase/firestore";
 import {getStorage} from "firebase/storage";
 
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
     apiKey: "AIzaSyB1JkQutCBS2Gsv0E8MC8bOMQ41cLpuNj4",
     authDomain: "authex-e0b07.firebaseapp.com",

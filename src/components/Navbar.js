@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    //    <Header>Find Your Disease</Header>;
     <Header>
       <Logo href="/">
         <img src="/images/KakaoTalk_Photo_2022-12-03-03-39-38.png" alt="" />

@@ -5,7 +5,7 @@ import SymptomsList from '../symptomList/SymptomsList';
 
 const SelectSymptomBox = () => {
   const [checkedItems, setCheckedItems] = useState(
-    new Map(SymptomsList.map((symptom) => [symptom, 0])),
+    new Map(SymptomsList.map((symptom) => [symptom, 0]))
   );
 
   const checkedItemHandler = (id, isChecked) => {
